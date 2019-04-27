@@ -289,11 +289,36 @@ $(document).ready(function () {
 <p>Model training all the dataset</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXRjYXJzLnJmIDwtIHJhbmRvbUZvcmVzdChtcGcgfiAuLCBkYXRhPW10Y2FycylcbmBgYCJ9 -->
+<pre class="r"><code>mtcars.rf &lt;- randomForest(mpg ~ ., data=mtcars)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Prediction vector</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXRjYXJzLnByZWQgPC0gcHJlZGljdChtdGNhcnMucmYsIG10Y2FycylcbmBgYCJ9 -->
+<pre class="r"><code>mtcars.pred &lt;- predict(mtcars.rf, mtcars)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGY8LWRhdGEuZnJhbWUobXRjYXJzLnByZWQpXG5gYGAifQ== -->
+<pre class="r"><code>df&lt;-data.frame(mtcars.pred)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGYkTW9kZWw8LXJvd25hbWVzKG10Y2FycylcbmBgYCJ9 -->
+<pre class="r"><code>df$Model&lt;-rownames(mtcars)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlJhbmRvbSBmb3Jlc3QgLSBSZWdyZXNpb24gfCBQcmFjdGljZSAjMSAtICINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCg0KYGBge3J9DQppbnN0YWxsLnBhY2thZ2VzKCJyYW5kb21Gb3Jlc3QiKQ0KDQpzZXR3ZChnZXR3ZCgpKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyYW5kb21Gb3Jlc3QpDQpgYGANCg0KTG9hZCBtdGNhcnMgZGF0YQ0KYGBge3J9DQpkYXRhKG10Y2FycykNCg0KYGBgDQoNCmBgYHtyfQ0KbXRjYXJzDQpgYGANCg0KTW9kZWwgdHJhaW5pbmcgYWxsIHRoZSBkYXRhc2V0DQoNCmBgYHtyfQ0KDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlJhbmRvbSBmb3Jlc3QgLSBSZWdyZXNpb24gfCBQcmFjdGljZSAjMSAtICINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCg0KYGBge3J9DQppbnN0YWxsLnBhY2thZ2VzKCJyYW5kb21Gb3Jlc3QiKQ0KDQpzZXR3ZChnZXR3ZCgpKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyYW5kb21Gb3Jlc3QpDQpgYGANCg0KTG9hZCBtdGNhcnMgZGF0YQ0KYGBge3J9DQpkYXRhKG10Y2FycykNCg0KYGBgDQoNCmBgYHtyfQ0KbXRjYXJzDQpgYGANCg0KTW9kZWwgdHJhaW5pbmcgYWxsIHRoZSBkYXRhc2V0DQoNCmBgYHtyfQ0KbXRjYXJzLnJmIDwtIHJhbmRvbUZvcmVzdChtcGcgfiAuLCBkYXRhPW10Y2FycykNCg0KYGBgDQoNClByZWRpY3Rpb24gdmVjdG9yDQoNCmBgYHtyfQ0KbXRjYXJzLnByZWQgPC0gcHJlZGljdChtdGNhcnMucmYsIG10Y2FycykNCmBgYA0KDQpgYGB7cn0NCmRmPC1kYXRhLmZyYW1lKG10Y2Fycy5wcmVkKQ0KYGBgDQoNCmBgYHtyfQ0KZGYkTW9kZWw8LXJvd25hbWVzKG10Y2FycykNCmBgYA0KDQo=</div>
 
 
 
