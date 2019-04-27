@@ -1,0 +1,32 @@
+---
+title: "Random forest - Regresion | Practice #1 - "
+output: html_notebook
+---
+
+
+```{r}
+install.packages("randomForest")
+
+setwd(getwd())
+```
+
+```{r}
+library(randomForest)
+```
+
+Load mtcars data
+```{r}
+data(mtcars)
+
+```
+
+```{r}
+mtcars
+```
+
+Model training all the dataset
+
+```{r}
+
+```
+
