@@ -1,0 +1,105 @@
+---
+title: "Random forest - Regresion | Practice #2"
+output: html_notebook
+---
+
+
+```{r}
+library(randomForest)
+```
+
+```{r}
+setwd(getwd())
+```
+
+Load Iris dataset
+```{r}
+data(iris)
+
+iris
+```
+
+Show Iris head data
+
+```{r}
+head(iris)
+```
+
+Show help
+
+```{r}
+help(iris)
+```
+
+
+Seed
+
+```{r}
+set.seed(1000)
+```
+
+sample(nrow(iris)) : single random row
+iris[sample(nrow(iris))] : dataframe 
+```{r}
+iris<-iris[sample(nrow(iris)),]
+```
+
+Sample size as 80% of the dataframe
+```{r}
+training_sample_size <-nrow(iris)*0.8
+```
+
+Training data
+
+```{r}
+training_data<-iris[1:training_sample_size,]
+```
+
+Test data
+
+```{r}
+test_data<-iris[(training_sample_size + 1):nrow(iris),]
+```
+
+
+Check sample size
+
+```{r}
+nrow(training_data)
+nrow(test_data)
+```
+
+
+Model
+
+```{r}
+model <- randomForest(Species ~ ., data=training_data)
+
+print(model)
+```
+
+```{r}
+model$confusion
+```
+
+
+```{r}
+species_predictions <- predict(model, test_data)
+species_predictions
+```
+
+Real values vs predictions
+```{r}
+table(real = test_data[, "Species"], prediccion = species_predictions)
+
+```
+
+```{r}
+plot (margin(model))
+```
+
+
+```{r}
+save(model , file="iris_model.RData")
+```
+
