@@ -1,13 +1,11 @@
 ---
 title: 'Random forest - Regresion | Practice #1 - '
-output:
-  html_document:
-    df_print: paged
+output: rmarkdown::github_document
 ---
 
 
 ```{r}
-install.packages("randomForest")
+#install.packages("randomForest")
 
 setwd(getwd())
 ```
